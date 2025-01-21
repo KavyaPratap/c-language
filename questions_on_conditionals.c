@@ -1,100 +1,184 @@
-/* //Odd even
+/*
 #include <stdio.h>
-int main()
-{   
-    int a;
-    printf("enter a number: ");
+int main(){
+    int num,rem,a,sum=0;
+    printf("Enter number: ");
     scanf("%d",&a);
-    
-    if (a%2==0){
-        printf("Number %d is even",a);
+    num=a;
+    while(num!=0){
+        rem = num%10;
+        sum=sum+rem;
+        num=num/10;
     }
-    else if(a%2==1){
-        printf("Number %d is odd",a);
+    printf("Sum of digits of %d is: %d",a,sum);
+    return 0;
+}
+*/
+
+/*
+//to count numbr of digits
+
+#include <stdio.h>
+#include <math.h>
+int main(){
+    int b,i=1,count=0;
+    long int num;
+
+    printf("Enter number:\n");
+    scanf("%ld",&num);
+    b=num;
+    while (num>0){
+        
+        count++;
+        num=num/10;
+    printf("Iteration number: %d num= %ld, Count= %d\n",i,num,count);
+    i++;
+}
+return 0;
+}*/
+/*
+//reverse number
+
+#include <stdio.h>
+#include <math.h>
+int main(){
+    int num,a,rem,rev;
+    printf("Enter number: ");
+    scanf("%d",&num);
+    a=num;
+    while (num>0){
+        rem=num%10;
+        rev=rev*10+rem;
+        num=num/10;
+    }
+    printf("reverse of %d is %d",a,rev);
+return 0;
+}
+
+*/
+
+/*
+//palindrome
+
+#include <stdio.h>
+#include <math.h>
+int main(){
+    int num,a,rem,rev;
+    printf("Enter number: ");
+    scanf("%d",&num);
+    a=num;
+    while (num>0){
+        rem=num%10;
+        rev=rev*10+rem;
+        num=num/10;
+    }
+    printf("reversed: %d\n",rev);
+    if (rev==a){
+        printf("%d is a palindrome",rev);
     }
     else{
-        printf("Enter valid input");
+        printf("%d is not palindrome",a);
+    }
+return 0;
+}
+*/
+
+//for loop
+/*
+#include <stdio.h>
+int main(){
+    int i=0,a=10;
+
+    for (i;i<11;i++)
+    {
+        printf("%d\n",i);
+
+    }
+    printf("for reverse: \n");
+        for (a;a>=0;a--)
+    {
+        printf("%d\n",a);
+
     }
     return 0;
-} */
+}
 
-/*
-//Grades
+//print even numbers
 #include <stdio.h>
-int main()
-{   
-    int a;
-    printf("enter marks: ");
-    scanf("%d",&a);
-    
-    if (a>=90){
-        printf("A grade\n");
-    }
-    else if(a>=80 && a<=89){
-        printf("B grade\n");
-    }
-    else if (a>=70 && a<=79){
-        printf("C grade\n");
-    }
-    else if(a>=60 && a<=69){
-        printf("D grade\n");
-    }
-    else if(a>=50 && a<=59){
-        printf("E grade\n");
-    }
-    else
+int main(){
+    int i=2,n;
+    printf("enter range: ");
+    scanf("%d",&n);
+    for (i;i<=n;i=i+2)
     {
-        printf("Fail!!");
-    }
-    return 0;
-}*/
-
-/*
-//largest among 3 numbers
-#include <stdio.h>
-int main()
-{   
-    int a,b,c;
-    printf("enter number a b and c: ");
-    scanf("%d%d%d",&a,&b,&c);
-    
-    if (a>b && a>c){
-        printf("%d is greater than %d and %d",a,b,c);
-    }
-    else if(b>a && b>c){
-        printf("%d is greater than %d and %d",b,a,c);
-    }
-    else
-    {
-        printf("%d is greater than %d and %d",c,a,b);
+        printf("%d\t",i);
     }
     return 0;
 }
 */
 
+//for prime numbers
+
 /*
-//number is positive negative or zero
+//for finding sum of 1^1+2^2+3^3+......n^n
 #include <stdio.h>
-int main()
-{   
-    int a;
-    printf("enter number a : ");
-    scanf("%d",&a);
-    
-    if (a>0){
-        printf("%d is positive",a);
+#include <math.h>
+
+int main(){
+    int n,i,sum=0;
+    printf("enter number: ");
+    scanf("%d",&n);
+    for (i=1;i<=n;i++){
+        sum=sum+pow(i,i);
     }
-    else if(a<0){
-        printf("%d is negative",a);
+    printf("sum: %d",sum);
+}
+*/
+/*
+//for finding 1+2-3+4-5+6-7+................+n
+
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+    int n,i,sum=1;
+    printf("enter n: ");
+    scanf("%d",&n);
+
+    for (i=2;i<=n;i++){
+        if (i%2!=0){
+            sum=sum-i;
+        }
+        else{
+            sum=sum+i;
+        }
     }
-    else
-    {
-        printf("%d is zero",a);
-    }
+    printf("sum: %d",sum);
     return 0;
 }
 */
 
+//for finding x^1+x^2-x^3+x^4-x^5+................+x^n
 
+#include <stdio.h>
+#include <math.h>
 
-8
+int main(){
+    int x,n,i,sum;
+    printf("enter x: ");
+    scanf("%d",&x);
+
+    printf("enter n: ");
+    scanf("%d",&n);
+    sum=pow(x,1);
+    for (i=x;i<=n;i++){
+        if (i%2!=0){
+            sum=sum-pow(i,n);
+        }
+        else{
+            sum=sum+pow(i,n);
+        }
+    }
+    printf("sum: %d",sum);
+    return 0;
+}
