@@ -86,4 +86,53 @@ int main(){
     return 0;
 }
 */
+/*
+        *
+      * * *
+    * * * * *
+  * * * * * * *
+* * * * * * * * *
 
+#include <stdio.h>
+int main(){
+    int i,j;
+    for (i=1;i<=5;i++){
+        for (j=1;j<=(5*2)-1;j++){
+            if(j>=5-(i-1) && (j<=5+(i-1))){
+                printf("* ");
+            }
+            else{
+                printf("  ");
+            }
+        }
+        printf("\n");
+    }
+    return 0;
+}
+*/
+/*
+        5
+      4 5 6       
+    3 4 5 6 7     
+  2 3 4 5 6 7 8   
+1 2 3 4 5 6 7 8 9 
+#include <stdio.h>
+int main(){
+    int i,j,rows;
+    printf("enter number of rows: ");
+    scanf("%d",&rows);
+
+    for (i=1;i<=5;i++){
+        for (j=1;j<=(rows*2)-1;j++){
+            if(j>=rows-(i-1) && (j<=rows+(i-1))){
+                printf("%d ",i);
+            }
+            else{
+                printf("  ");
+            }
+        }
+        printf("\n");
+    }
+    return 0;
+}
+*/
