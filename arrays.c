@@ -29,52 +29,19 @@ for (i=0;i<=n;i++){
 
 */
 /*
-#include <stdio.h>
-
-int max_runs(int [],int);  //int [] is used for defining array argument type while creating a function
-int max_runs(int b[],int n){
-    int i,max=b[0];
-    for (i=1;i<n;i++){
-        if (b[i]>max)
-        max=b[i];
-    }
-    return max;
-}
-
-int main(){
-    int i,a[11];
-    printf("Enter runs scored by batsmen");
-    for (i=0;i<=10;i++){
-     
-        scanf("%d",&a[i]);
-    
-    }
-
-    for (i=0;i<=10;i++){
-     
-        printf("Run scored by Player %d is %d \n",i+1,a[i]);
-    
-    }
-
-    printf("Maximum runs scored are-> %d",i,max_runs(a,11));
-
-return 0;
-}
-*/
-
 //program to find total runs of team and average run made by players in cricket.
 #include <stdio.h>
 
 int average(int [],int);  //int [] is used for defining array argument type while creating a function
 int average(int b[],int n){
-    int i,avg,sum=0;
-
+    int i,sum=0;
+    float avg;
     for (i=0;i<n;i++){
         sum=sum+b[i];
     }
 
-    avg= sum/n;
-    printf("total marks=> %d\naverage runs scored by a batsman=>%d",sum,avg);
+    avg= (float)sum/(float)n;
+    printf("total runs=> %d\naverage runs scored by a batsman=>%f",sum,avg);
 }
 
 int main(){
@@ -86,4 +53,139 @@ int main(){
     }
     average(a,11);
 return 0;
+}
+*/
+/*
+//linear search
+#include <stdio.h>
+#define MAX 100
+
+int linear_search(int [], int, int);
+int linear_search(int b[],int key,int n){
+    int i;
+    for(i=0;i<=n;i++){
+        if (b[i]==key){
+            printf("%d",i);
+        }
+    }
+    return -1;
+}
+
+int main(){
+    int a[MAX],n,i,key,x;
+    printf("Enter size of array\n");
+    scanf("%d",&n);
+    printf("Enter elements of array\n");
+    for(i=0;i<n;i++){
+        scanf("%d",&a[i]);
+    }
+    printf("Enter value to be searched: \n");
+    scanf("%d",&key);
+    linear_search(a,key,n);
+
+}
+*/
+/*
+#include <stdio.h>
+#define MAX 100
+int rev(int [],int);
+int rev(int b[],int n){
+
+    int rem,rev,count=0;
+    int i,c[n];
+    for(i=0;i<=n;i++){
+            rem=n%10;
+            rev=rev*10+rem;
+            c[i]=rev;
+            n=n/10;
+    }
+    return c;
+}
+int main(){
+    int a,a[MAX],n,x,i;
+    printf("Enter size of array\n");
+    scanf("%d",&n);
+    printf("Enter elements of array\n");
+    for(i=0;i<n;i++){
+    scanf("%d",&a[i]);
+    }
+    x=rev(a,n);
+    printf(x);
+}
+/*
+individual element of array are reversed
+
+#include <stdio.h>
+#define MAX 100
+
+int rev(int b[], int n) {
+    int rem, reversed, i;
+    int c[MAX];  
+    
+    for(i = 0; i < n; i++) {
+        reversed = 0;
+        int num = b[i];  
+        
+        while (num > 0) {
+            rem = num % 10;
+            reversed = reversed * 10 + rem;
+            num = num / 10;
+        }
+        
+        c[i] = reversed;
+    }
+    
+    printf("Reversed numbers: ");
+    for(i = 0; i < n; i++) {
+        printf("%d ", c[i]);
+    }
+    printf("\n");
+    
+    return 0;  
+}
+
+int main() {
+    int a[MAX], n, i;
+
+    printf("Enter size of array: ");
+    scanf("%d", &n);
+    
+    printf("Enter elements of array: ");
+    for(i = 0; i < n; i++) {
+        scanf("%d", &a[i]);
+    }
+
+    rev(a, n);
+    
+    return 0;
+}
+*/
+// revesing of an array
+#include <stdio.h>
+
+#define MAX 100
+
+int main(){
+	int a[MAX],n,i;
+	printf("Enter size of array\n");
+	scanf("%d",&n);
+	printf("Enter elemets of array\n");
+	
+	for (i=0;i<n;i++){
+		scanf("%d",&a[i]);
+	}	
+	
+	array_rev(a,n);
+}
+
+int array_rev(int [],int);
+int array_rev(int b[], int size){
+	int a[MAX],i=0,j;
+	for (i=0;i<size;i++){
+		a[i]=b[size-1-i];
+	}
+	for (j=0;j<size;j++){
+		printf("%d ",a[j]);
+	}
+	
 }
