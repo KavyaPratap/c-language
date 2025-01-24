@@ -1,184 +1,191 @@
 /*
+an array is a cp;;ection of elements of similar data types stored at contiguous memory locations.
+an array of characters is also called string.
+1.NEED---to store different data in 1 array. eg instead of uding 11 variables for runs scored by batsmen of a cricket team.
+
+array is same as python's list but unlike python we cannot store different data types in an arrya. All data stored in an array must be of same datatype.
+
+* to access 6 th element of array we write--->  a[5]
+
+* a[i]-------here i is subscript and a is subscripted value.
+
+* how compiler access the element---- base address + (index of element to find) x (size of datatype)
+
+eg----base address of array is 1000 and is of int type so size of data type 4
+so to access 4th element compiler finds by using formula--- 1000 + (4)*4
+
+
+syntax of declaring array--
+type_of_elements name[size];  //here size means number of elements.
+
+eg--
+int a[10];
+
+how to store elements of a static array----
+where n is number of elements of array
+for (i=0;i<=n;i++){
+    scanf("%d",&a[i]);
+}
+
+*/
+/*
+//program to find total runs of team and average run made by players in cricket.
 #include <stdio.h>
-int main(){
-    int num,rem,a,sum=0;
-    printf("Enter number: ");
-    scanf("%d",&a);
-    num=a;
-    while(num!=0){
-        rem = num%10;
-        sum=sum+rem;
-        num=num/10;
+
+int average(int [],int);  //int [] is used for defining array argument type while creating a function
+int average(int b[],int n){
+    int i,sum=0;
+    float avg;
+    for (i=0;i<n;i++){
+        sum=sum+b[i];
     }
-    printf("Sum of digits of %d is: %d",a,sum);
-    return 0;
+
+    avg= (float)sum/(float)n;
+    printf("total runs=> %d\naverage runs scored by a batsman=>%f",sum,avg);
+}
+
+int main(){
+    int i,x,a[11];
+    printf("Enter runs scored by batsmen\n");
+    for (i=0;i<=10;i++){
+
+        scanf("%d",&a[i]);
+    }
+    average(a,11);
+return 0;
 }
 */
-
 /*
-//to count numbr of digits
+//linear search
+#include <stdio.h>
+#define MAX 100
+
+int linear_search(int [], int, int);
+int linear_search(int b[],int key,int n){
+    int i;
+    for(i=0;i<=n;i++){
+        if (b[i]==key){
+            printf("%d",i);
+        }
+    }
+    return -1;
+}
+
+int main(){
+    int a[MAX],n,i,key,x;
+    printf("Enter size of array\n");
+    scanf("%d",&n);
+    printf("Enter elements of array\n");
+    for(i=0;i<n;i++){
+        scanf("%d",&a[i]);
+    }
+    printf("Enter value to be searched: \n");
+    scanf("%d",&key);
+    linear_search(a,key,n);
+
+}
+*/
+/*
+#include <stdio.h>
+#define MAX 100
+int rev(int [],int);
+int rev(int b[],int n){
+
+    int rem,rev,count=0;
+    int i,c[n];
+    for(i=0;i<=n;i++){
+            rem=n%10;
+            rev=rev*10+rem;
+            c[i]=rev;
+            n=n/10;
+    }
+    return c;
+}
+int main(){
+    int a,a[MAX],n,x,i;
+    printf("Enter size of array\n");
+    scanf("%d",&n);
+    printf("Enter elements of array\n");
+    for(i=0;i<n;i++){
+    scanf("%d",&a[i]);
+    }
+    x=rev(a,n);
+    printf(x);
+}
+/*
+individual element of array are reversed
 
 #include <stdio.h>
-#include <math.h>
-int main(){
-    int b,i=1,count=0;
-    long int num;
+#define MAX 100
 
-    printf("Enter number:\n");
-    scanf("%ld",&num);
-    b=num;
-    while (num>0){
+int rev(int b[], int n) {
+    int rem, reversed, i;
+    int c[MAX];  
+    
+    for(i = 0; i < n; i++) {
+        reversed = 0;
+        int num = b[i];  
         
-        count++;
-        num=num/10;
-    printf("Iteration number: %d num= %ld, Count= %d\n",i,num,count);
-    i++;
-}
-return 0;
-}*/
-/*
-//reverse number
-
-#include <stdio.h>
-#include <math.h>
-int main(){
-    int num,a,rem,rev;
-    printf("Enter number: ");
-    scanf("%d",&num);
-    a=num;
-    while (num>0){
-        rem=num%10;
-        rev=rev*10+rem;
-        num=num/10;
+        while (num > 0) {
+            rem = num % 10;
+            reversed = reversed * 10 + rem;
+            num = num / 10;
+        }
+        
+        c[i] = reversed;
     }
-    printf("reverse of %d is %d",a,rev);
-return 0;
+    
+    printf("Reversed numbers: ");
+    for(i = 0; i < n; i++) {
+        printf("%d ", c[i]);
+    }
+    printf("\n");
+    
+    return 0;  
 }
 
-*/
+int main() {
+    int a[MAX], n, i;
 
-/*
-//palindrome
-
-#include <stdio.h>
-#include <math.h>
-int main(){
-    int num,a,rem,rev;
-    printf("Enter number: ");
-    scanf("%d",&num);
-    a=num;
-    while (num>0){
-        rem=num%10;
-        rev=rev*10+rem;
-        num=num/10;
+    printf("Enter size of array: ");
+    scanf("%d", &n);
+    
+    printf("Enter elements of array: ");
+    for(i = 0; i < n; i++) {
+        scanf("%d", &a[i]);
     }
-    printf("reversed: %d\n",rev);
-    if (rev==a){
-        printf("%d is a palindrome",rev);
-    }
-    else{
-        printf("%d is not palindrome",a);
-    }
-return 0;
-}
-*/
 
-//for loop
-/*
-#include <stdio.h>
-int main(){
-    int i=0,a=10;
-
-    for (i;i<11;i++)
-    {
-        printf("%d\n",i);
-
-    }
-    printf("for reverse: \n");
-        for (a;a>=0;a--)
-    {
-        printf("%d\n",a);
-
-    }
-    return 0;
-}
-
-//print even numbers
-#include <stdio.h>
-int main(){
-    int i=2,n;
-    printf("enter range: ");
-    scanf("%d",&n);
-    for (i;i<=n;i=i+2)
-    {
-        printf("%d\t",i);
-    }
+    rev(a, n);
+    
     return 0;
 }
 */
-
-//for prime numbers
-
-/*
-//for finding sum of 1^1+2^2+3^3+......n^n
+// revesing of an array
 #include <stdio.h>
-#include <math.h>
+
+#define MAX 100
 
 int main(){
-    int n,i,sum=0;
-    printf("enter number: ");
-    scanf("%d",&n);
-    for (i=1;i<=n;i++){
-        sum=sum+pow(i,i);
-    }
-    printf("sum: %d",sum);
+	int a[MAX],n,i;
+	printf("Enter size of array\n");
+	scanf("%d",&n);
+	printf("Enter elemets of array\n");
+	
+	for (i=0;i<n;i++){
+		scanf("%d",&a[i]);
+	}	
+	
+	array_rev(a,n);
 }
-*/
-/*
-//for finding 1+2-3+4-5+6-7+................+n
 
-#include <stdio.h>
-#include <math.h>
-
-int main(){
-    int n,i,sum=1;
-    printf("enter n: ");
-    scanf("%d",&n);
-
-    for (i=2;i<=n;i++){
-        if (i%2!=0){
-            sum=sum-i;
-        }
-        else{
-            sum=sum+i;
-        }
-    }
-    printf("sum: %d",sum);
-    return 0;
-}
-*/
-
-//for finding x^1+x^2-x^3+x^4-x^5+................+x^n
-
-#include <stdio.h>
-#include <math.h>
-
-int main(){
-    int x,n,i,sum;
-    printf("enter x: ");
-    scanf("%d",&x);
-
-    printf("enter n: ");
-    scanf("%d",&n);
-    sum=pow(x,1);
-    for (i=x;i<=n;i++){
-        if (i%2!=0){
-            sum=sum-pow(i,n);
-        }
-        else{
-            sum=sum+pow(i,n);
-        }
-    }
-    printf("sum: %d",sum);
-    return 0;
+int array_rev(int [],int);
+int array_rev(int b[], int size){
+	int a[MAX],i=0,j;
+	for (i=0;i<size;i++){
+		a[i]=b[size-1-i];
+	}
+	for (j=0;j<size;j++){
+		printf("%d ",a[j]);
+	}
+	
 }
