@@ -28,6 +28,7 @@ for (i=0;i<=n;i++){
 }
 
 */
+/*
 #include <stdio.h>
 
 int max_runs(int [],int);  //int [] is used for defining array argument type while creating a function
@@ -57,5 +58,32 @@ int main(){
 
     printf("Maximum runs scored are-> %d",i,max_runs(a,11));
 
+return 0;
+}
+*/
+
+//program to find total runs of team and average run made by players in cricket.
+#include <stdio.h>
+
+int average(int [],int);  //int [] is used for defining array argument type while creating a function
+int average(int b[],int n){
+    int i,avg,sum=0;
+
+    for (i=0;i<n;i++){
+        sum=sum+b[i];
+    }
+
+    avg= sum/n;
+    printf("total marks=> %d\naverage runs scored by a batsman=>%d",sum,avg);
+}
+
+int main(){
+    int i,x,a[11];
+    printf("Enter runs scored by batsmen\n");
+    for (i=0;i<=10;i++){
+
+        scanf("%d",&a[i]);
+    }
+    average(a,11);
 return 0;
 }
