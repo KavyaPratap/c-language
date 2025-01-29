@@ -1,0 +1,82 @@
+/*
+In dynamic memory allocation user defines the size of an array.
+dynamic memory allocation have 4 functions, defined in stdlib.h library   #include <stdlib.h>-
+
+malloc()	- 	malloc(n*m)	-	It is used to make memory for storing n dataypes of size of m datatype. It returns void pointer.
+								typecasting of malloc result-- <datatype> *ptr =(datatype*)malloc(n*sizeof(datatype));
+				
+realloc()	-	realloc()	-
+
+calloc()	-	calloc()	-
+
+free()		-	free()		-
+
+
+*/
+/*
+#include <stdio.h>
+#include <stdlib.h>
+int main(){
+	int n;
+	printf("Enter the size: ");
+	scanf("%d",&n);
+	void *ptr;		//void *ptr is an empty / void pointer which don't have any datatype but can be called as any datatype. It can be typecasted into any datatype.
+	
+	ptr=&n;
+	printf("%d\n",*((int*)ptr));	//it will give dereferencing 'void *' pointer so to avoid this, we will typecast void pointer so as to use it.
+	malloc(n*sizeof(int));
+	/*
+	//example of type casting--
+	float a=3.5;
+	int b;
+	b=(int)a;		//type casting a [float] to [int]
+	printf("%d\n",b);
+//type casting end
+
+
+	return 0;
+}
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+	int n;
+	printf("Enter the size: ");
+	scanf("%d",&n);
+	void *ptr;		//void *ptr is an empty / void pointer which don't have any datatype but can be called as any datatype. It can be typecasted into any datatype.
+	
+	ptr=&n;
+	printf("%d\n",*((int*)ptr));	//it will give dereferencing 'void *' pointer so to avoid this, we will typecast void pointer so as to use it.
+	malloc(n*sizeof(int));
+*/	
+	
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+	int n;
+	printf("Enter the size: ");
+	scanf("%d",&n);
+	struct employee* ptr=(struct employee*)malloc(n*sizeof(struct employee));
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
