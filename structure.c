@@ -60,7 +60,14 @@ int main(){
 	printf("%d %d %s\n",emp2.age,emp2.salary,emp2.name);
 }
 */
+
+
+
+
+/*
 //typedef ut allows us to define datatype of our own data. eg---
+//defining complex
+
 #include <stdio.h>
 typedef struct{
     float real;
@@ -99,3 +106,7 @@ int main(){
     read_complex(&b);
     write_complex(add_complex(a,b));
 }
+
+
+
+*/
