@@ -1,16 +1,28 @@
 /*
-In dynamic memory allocation user defines the size of an array.
-dynamic memory allocation have 4 functions, defined in stdlib.h library   #include <stdlib.h>-
+=> malloc():
+Syntax: malloc(n * m)
+It is used to allocate memory for storing n elements of size m bytes each. It returns a void pointer.
+Example:
+int *ptr = (int*)malloc(n * sizeof(int));
 
-malloc()	- 	malloc(n*m)	-	It is used to make memory for storing n dataypes of size of m datatype. It returns void pointer.
-								typecasting of malloc result-- <datatype> *ptr =(datatype*)malloc(n*sizeof(datatype));
-				
-realloc()	-	realloc()	-
 
-calloc()	-	calloc()	-
+=> realloc():
+Syntax: realloc(ptr, new_size)
+It is used to resize the previously allocated memory block pointed to by ptr to new_size bytes. If the new size is larger, the new area may not be initialized.
+Example:
+ptr = (int*)realloc(ptr, new_size * sizeof(int));
 
-free()		-	free()		-
+=> calloc():
+Syntax: calloc(n, m)
+It is used to allocate memory for an array of n elements each of size m bytes and initializes all bytes in the allocated storage to zero.
+Example:
+int *ptr = (int*)calloc(n, sizeof(int));
 
+=>free():
+Syntax: free(ptr)
+It is used to deallocate the memory previously allocated by malloc(), realloc(), or calloc(). The pointer ptr must not be used after freeing the memory.
+Example:
+free(ptr);
 
 */
 /*
